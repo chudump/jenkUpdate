@@ -1,0 +1,15 @@
+gitUrls:
+- https://bitbucket.org/xyz/abc
+- https://bitbucket.org/xyz/cde
+
+createBackup: false
+fileToUpdate: Jenkinsfile
+branch:
+  pullBranch: develop
+  pushBranch: develop-fix-kustomization-versioning
+
+strChanges:
+  - match: "apply -k"
+    replace: "kustomize"
+  - match: "--dry-run=client -o yaml"
+    replace: ""
